@@ -27,7 +27,10 @@ def Refresh():
   df = pd.read_excel((filename))
   OptionList=(list(df.columns))
   print(OptionList)
-  tk.Label(master, text="{}".format(varList), bg='white',fg="#0A5688", font=("Arial", 12, "bold")).grid(row=3,column=1)
+  if(len(varList)>0):
+  	tk.Label(master, text="{}".format(varList), bg='white',fg="#0A5688", font=("Arial", 12, "bold")).grid(row=3,column=1)
+  else:
+  	tk.Label(master, text="", bg='white',fg="#0A5688", font=("Arial", 12, "bold")).grid(row=3,column=1)
   DropDownNumber()
   VariableColumsDropDown()
 
@@ -68,7 +71,7 @@ def DelVarList():
   tk.Label(master, text="{}".format(dispVarList), bg='white',fg="#0A5688", font=("Arial", 12, "bold")).grid(row=3,column=1)
   
 def SendMessage():
-  global df,varList
+  global df,varList,filename
   dispVarList=''
   for i in varList:
     if(len(dispVarList)<1):

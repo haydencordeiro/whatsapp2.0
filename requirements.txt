@@ -1,4 +1,7 @@
+et-xmlfile==1.0.1
+jdcal==1.4.1
 numpy==1.19.0
+openpyxl==3.0.3
 pandas==1.0.5
 PyMsgBox==1.0.8
 python-dateutil==2.8.1
